@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        .navbar {
+            padding: 10px 20px;
+        }
+        .welcome-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+        .welcome-text {
+            text-align: center;
+            padding: 50px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">MyLogo</a>
+        <div class="ms-auto d-flex align-items-center">
+            <img src="https://via.placeholder.com/40" alt="Profile" class="profile-pic">
+            <span class="me-3">{{ request.user.username|title }}</span>
+            
+            <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+            <a href="{% url 'contact' %}" class="btn btn-danger">contact</a>
+            
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <div class="welcome-box">
+        <div class="welcome-text">
+            <h1>Welcome to the Website</h1>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
